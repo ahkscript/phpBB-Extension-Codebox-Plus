@@ -42,7 +42,6 @@ $lang = array_merge($lang, array(
 	
 	'CODEBOX_PLUS_TITLE'						=> 'Codebox Plus Extension',
 	'CODEBOX_PLUS_TITLE_SETTINGS'				=> 'Cài đặt',
-	'CODEBOX_PLUS_WARNING'						=> 'KHÔNG ĐƯỢC CHỈNH SỬA BBCODE [CODEBOX=]',
 	'CODEBOX_PLUS_SYNTAX_HIGHLIGHTING'			=> 'Kích hoạt chức năng làm nổi bật cú pháp',
 	'CODEBOX_PLUS_SYNTAX_HIGHLIGHTING_EXPLAIN'	=> '',
 	'CODEBOX_PLUS_ENABLE_DOWNLOAD'				=> 'Kích hoạt chức năng tải về',
