@@ -32,7 +32,6 @@ $lang = array_merge($lang, array(
 	'CODEBOX_PLUS_ERROR_DOWNLOAD_DISABLED'		=> 'Tính năng tải về đã được ngưng kích hoạt bởi người quản trị',
 	'CODEBOX_PLUS_ERROR_NO_PERMISSION'			=> 'Bạn không được cấp phép đầy đủ để hoàn tất quá trình này',
 	'CODEBOX_PLUS_CONFIRM'						=> 'Vui lòng nhập mã xác nhận để tải tập tin này',
-	'CODEBOX_PLUS_CODE'							=> 'Mã',
 	'CODEBOX_PLUS_DOWNLOAD'						=> 'Tải về',
 	'CODEBOX_PLUS_EXPAND'						=> 'Mở rộng',
 	'CODEBOX_PLUS_COLLAPSE'						=> 'Thu hẹp',

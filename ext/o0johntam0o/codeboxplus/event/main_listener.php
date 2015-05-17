@@ -204,10 +204,11 @@ class main_listener implements EventSubscriberInterface
 			$lang = 'text';
 		}
 		
-		$re = '<div class="codebox_plus_wrap"><div class="codebox_plus_header">';
-		$re .= '<strong>' . $this->user->lang['CODEBOX_PLUS_CODE'] . ': </strong>';
-		$re .= '<a href="#" onclick="codebox_plus_select(this, 1); return false;">[' . $this->user->lang['SELECT_ALL_CODE'] . ']</a>';
-		$re .= '&nbsp;<a href="#" onclick="codebox_plus_toggle(this, 1); return false;">[' . $this->user->lang['CODEBOX_PLUS_EXPAND'] . '/' . $this->user->lang['CODEBOX_PLUS_COLLAPSE'] . ']</a>';
+		$re = '<div class="codebox codebox_plus"><p>';
+		$re .= $this->user->lang['CODE'] . ': ';
+		$re .= '<a href="#" onclick="codebox_plus_select(this); return false;">[' . $this->user->lang['SELECT_ALL_CODE'] . ']</a>';
+		
+		$re .= "&nbsp;<a href=\"#\" onclick=\"codebox_plus_toggle(this, '[" . $this->user->lang['CODEBOX_PLUS_EXPAND'] . "]', '[" . $this->user->lang['CODEBOX_PLUS_COLLAPSE'] . "]'); return false;\">[" . $this->user->lang['CODEBOX_PLUS_EXPAND'] . ']</a>';
 		
 		if ($this->download_enabled && $lang != 'NULL' && $id != 0)
 		{
@@ -215,8 +216,8 @@ class main_listener implements EventSubscriberInterface
 			$re .= '[' . $this->user->lang['CODEBOX_PLUS_DOWNLOAD'] . ']</a> ' . ($file == '' ? '' : '('. $file . ')');
 		}
 		
-		$re .= '</div>';
-		$re .= '<div><div style="display: none;">';
+		$re .= '<span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/">GeSHi</a> &copy; <a href="https://www.phpbb.com/customise/db/extension/codeboxplus/">Codebox Plus</a></span>';
+		$re .= '</p><code class="collapsed">';
 		
 		if ($lang != 'NULL')
 		{
@@ -227,8 +228,7 @@ class main_listener implements EventSubscriberInterface
 			$re .= $this->user->lang['CODEBOX_PLUS_NO_PREVIEW'];
 		}
 		
-		$re .= '</div></div>';
-		$re .= '<div class="codebox_plus_footer"><a href="http://qbnz.com/highlighter/">GeSHi</a> &copy; <a href="https://www.phpbb.com/customise/db/extension/codeboxplus/">Codebox Plus</a></div></div>';
+		$re .= '</code></div>';
 		
 		return $re;
 	}
