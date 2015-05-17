@@ -185,7 +185,7 @@ class main_listener implements EventSubscriberInterface
 		$re .= $this->user->lang['CODE'] . ': ';
 		$re .= '<a href="#" onclick="codebox_plus_select(this); return false;">[' . $this->user->lang['SELECT_ALL_CODE'] . ']</a>';
 		
-		$re .= '&nbsp;<a href="#" onclick="codebox_plus_toggle(this); return false;">[' . $this->user->lang['CODEBOX_PLUS_EXPAND'] . '/' . $this->user->lang['CODEBOX_PLUS_COLLAPSE'] . ']</a>';
+		$re .= "&nbsp;<a href=\"#\" onclick=\"codebox_plus_toggle(this, '[" . $this->user->lang['CODEBOX_PLUS_EXPAND'] . "]', '[" . $this->user->lang['CODEBOX_PLUS_COLLAPSE'] . "]'); return false;\">[" . $this->user->lang['CODEBOX_PLUS_EXPAND'] . ']</a>';
 		
 		if ($this->download_enabled && $lang != 'NULL')
 		{

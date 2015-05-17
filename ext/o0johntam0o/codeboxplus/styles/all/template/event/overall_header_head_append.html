@@ -20,17 +20,20 @@
 
 <script type="text/javascript">
 /* <![CDATA[ */
-	function codebox_plus_toggle(a)
+	function codebox_plus_toggle(a, expand, collapse)
 	{
 		var e = a.parentNode.parentNode.getElementsByTagName('code')[0];
+		var text = e.textContent ? 'textContent' : 'innerText';
 		
 		if (e.className == 'collapsed')
 		{
 			e.className = '';
+			a[text] = collapse;
 		}
 		else
 		{
 			e.className = 'collapsed';
+			a[text] = expand;
 		}
 	}
 
