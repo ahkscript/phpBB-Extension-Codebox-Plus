@@ -214,7 +214,7 @@ class main_listener implements EventSubscriberInterface
 		$re .= '<a href="#" onclick="codebox_plus_select(this, 1); return false;">[' . $this->user->lang['SELECT_ALL_CODE'] . ']</a>';
 		$re .= '&nbsp;<a href="#" onclick="codebox_plus_toggle(this, 1); return false;">[' . $this->user->lang['CODEBOX_PLUS_EXPAND'] . '/' . $this->user->lang['CODEBOX_PLUS_COLLAPSE'] . ']</a>';
 		
-		if ($this->download_enabled && $lang != 'NULL')
+		if ($this->download_enabled && $lang != 'NULL' && $id != 0)
 		{
 			$re .= '&nbsp;<a href="' . $this->helper->route('o0johntam0o_codeboxplus_download_controller', array('id' => $id, 'part' => $part)) . '" onclick="window.open(this.href); return false;">';
 			$re .= '[' . $this->user->lang['CODEBOX_PLUS_DOWNLOAD'] . ']</a> ' . '('. $file . ')';
