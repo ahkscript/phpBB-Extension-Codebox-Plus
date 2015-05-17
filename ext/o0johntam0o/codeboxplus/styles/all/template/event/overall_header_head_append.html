@@ -1,67 +1,42 @@
 <style type="text/css">
 /* <![CDATA[ */
-	.codebox_plus_wrap
+	.codebox_plus code
 	{
-		padding: 3px;
-		background-color: #FFFFFF;
-		border: 1px solid #D8D8D8;
-		font-size: 1em;
+		color: black;
+		max-height: none;
 	}
-	
-	.codebox_plus_header
+	.codebox_plus .collapsed
 	{
-		text-transform: uppercase;
-		border-bottom: 1px solid #CCCCCC;
-		margin-bottom: 3px;
-		font-size: 0.8em;
-		font-weight: bold;
-		display: block;
+		display: none;
 	}
-	
-	.codebox_plus_footer
+	.codebox_plus_about
 	{
-		border-top: 1px solid #CCCCCC;
-		margin-top: 3px;
-		font-size: 0.8em;
-		display: block;
-		text-align: right;
+		float: right;
+		font-weight: normal;
+		text-transform: none;
 	}
 /* ]]> */
 </style>
 
 <script type="text/javascript">
 /* <![CDATA[ */
-	function codebox_plus_toggle(a, tmp)
+	function codebox_plus_toggle(a)
 	{
-		if (tmp)
-		{
-			var e = a.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0];
-		}
-		else
-		{
-			var e = a.parentNode.parentNode.getElementsByTagName('DD')[0];
-		}
+		var e = a.parentNode.parentNode.getElementsByTagName('code')[0];
 		
-		if (e.style.display == 'none')
+		if (e.className == 'collapsed')
 		{
-			e.style.display = 'inline';
+			e.className = '';
 		}
 		else
 		{
-			e.style.display = 'none';
+			e.className = 'collapsed';
 		}
 	}
 
-	function codebox_plus_select(a, tmp)
+	function codebox_plus_select(a)
 	{
-		if (tmp)
-		{
-			var e = a.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0];
-		}
-		else
-		{
-			var e = a.parentNode.parentNode.getElementsByTagName('DD')[0];
-		}
+		var e = a.parentNode.parentNode.getElementsByTagName('code')[0];
 
 		// Not IE and IE9+
 		if (window.getSelection)

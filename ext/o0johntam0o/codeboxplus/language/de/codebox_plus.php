@@ -33,7 +33,6 @@ $lang = array_merge($lang, array(
 	'CODEBOX_PLUS_ERROR_DOWNLOAD_DISABLED'		=> 'Die Download Funktion wurde vom Administrator deaktiviert',
 	'CODEBOX_PLUS_ERROR_NO_PERMISSION'			=> 'Du hast nicht die nötigen Rechte um die Aktion abzuschließen',
 	'CODEBOX_PLUS_CONFIRM'						=> 'Bitte gib den Bestätigungscode ein um die Datei runter zu laden',
-	'CODEBOX_PLUS_CODE'							=> 'Code',
 	'CODEBOX_PLUS_DOWNLOAD'						=> 'Download',
 	'CODEBOX_PLUS_EXPAND'						=> 'Erweitern',
 	'CODEBOX_PLUS_COLLAPSE'						=> 'Minimieren',
