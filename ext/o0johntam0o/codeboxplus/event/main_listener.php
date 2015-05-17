@@ -208,7 +208,14 @@ class main_listener implements EventSubscriberInterface
 		$re .= $this->user->lang['CODE'] . ': ';
 		$re .= '<a href="#" onclick="codebox_plus_select(this); return false;">[' . $this->user->lang['SELECT_ALL_CODE'] . ']</a>';
 		
-		$re .= "&nbsp;<a href=\"#\" onclick=\"codebox_plus_toggle(this, '[" . $this->user->lang['CODEBOX_PLUS_EXPAND'] . "]', '[" . $this->user->lang['CODEBOX_PLUS_COLLAPSE'] . "]'); return false;\">[" . $this->user->lang['CODEBOX_PLUS_EXPAND'] . ']</a>';
+		// Lexikos: Make the code box collapsible only if there are > 11 lines.
+		// This relies on max-height being set to 11 * line-height, so could be
+		// a little odd if the styles are changed.
+		if (substr_count($code, "\n") > 10)
+		{
+			$re .= "&nbsp;<a href=\"#\" onclick=\"codebox_plus_toggle(this, '[" . $this->user->lang['CODEBOX_PLUS_EXPAND'] . "]', '[" . $this->user->lang['CODEBOX_PLUS_COLLAPSE'] . "]'); return false;\">[" . $this->user->lang['CODEBOX_PLUS_EXPAND'] . ']</a>';
+			$codebox_class = ' class="collapsed"';
+		}
 		
 		if ($this->download_enabled && $lang != 'NULL' && $id != 0)
 		{
@@ -217,7 +224,7 @@ class main_listener implements EventSubscriberInterface
 		}
 		
 		$re .= '<span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/">GeSHi</a> &copy; <a href="https://www.phpbb.com/customise/db/extension/codeboxplus/">Codebox Plus</a></span>';
-		$re .= '</p><code class="collapsed">';
+		$re .= '</p><code' . $codebox_class . '>';
 		
 		if ($lang != 'NULL')
 		{
