@@ -174,21 +174,21 @@ class main
 
 		//- Process post data
 		// Collect code
-		preg_match_all("#\[codebox=[a-z0-9_-]+ file=(.*?):" . $post_data['bbcode_uid'] . "\](.*?)\[/codebox:" . $post_data['bbcode_uid'] . "\]#msi", $post_data['post_text'], $code_data);
+		preg_match_all("#\[code(?:=([a-z0-9_-]+))?(?: file=(.*?))?:" . $post_data['bbcode_uid'] . "\](.*?)\[/code:" . $post_data['bbcode_uid'] . "\]#msi", $post_data['post_text'], $code_data);
 		
-		if (count($code_data[2]) >= $part)
+		if (count($code_data[3]) >= $part)
 		{
 			$part--;
-			$code = $code_data[2][$part];
+			$code = $code_data[3][$part];
 			
 			if ($code != '')
 			{
 				// Decode some special characters
 				$code = $this->codebox_decode_code($code);
 				
-				if ($code_data[1][$part] != '')
+				if ($code_data[2][$part] != '')
 				{
-					$filename = $code_data[1][$part];
+					$filename = $code_data[2][$part];
 				}
 			}
 			else

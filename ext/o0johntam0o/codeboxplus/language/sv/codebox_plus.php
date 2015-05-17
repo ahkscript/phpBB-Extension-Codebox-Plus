@@ -43,7 +43,6 @@ $lang = array_merge($lang, array(
 	
 	'CODEBOX_PLUS_TITLE'						=> 'Codebox Plus tillägg',
 	'CODEBOX_PLUS_TITLE_SETTINGS'				=> 'Inställningar',
-	'CODEBOX_PLUS_WARNING'						=> 'FÖRÄNDRA EJ BBCODEN [CODEBOX=]',
 	'CODEBOX_PLUS_SYNTAX_HIGHLIGHTING'			=> 'Aktivera syntax highlighting',
 	'CODEBOX_PLUS_SYNTAX_HIGHLIGHTING_EXPLAIN'	=> '',
 	'CODEBOX_PLUS_ENABLE_DOWNLOAD'				=> 'Aktivera nerladdningsfunktionen',
