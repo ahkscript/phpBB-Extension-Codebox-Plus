@@ -9,6 +9,8 @@ https://github.com/o0johntam0o/
 
 https://www.phpbb.com/customise/db/author/o0johntam0o/
 
+Modified by Lexikos for the ahkscript.org forums.
+
 ## Description
 
 Codebox Plus alows you to:
