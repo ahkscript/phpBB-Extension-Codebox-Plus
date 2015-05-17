@@ -190,6 +190,11 @@ class main
 				{
 					$filename = $code_data[2][$part];
 				}
+				else
+				{
+					// Give the filename a default extension.
+					$filename .= (strcasecmp('autohotkey', $code_data[1][$part]) == 0 ? '.ahk' : '.txt');
+				}
 			}
 			else
 			{

@@ -2,6 +2,7 @@
 <div id="format-buttons">
 	<select name="addbbcode_codeboxplus" onchange="bbfontstyle('[code=' + this.form.addbbcode_codeboxplus.options[this.form.addbbcode_codeboxplus.selectedIndex].value + ' file={L_CODEBOX_PLUS_DEFAULT_FILENAME}.' + this.form.addbbcode_codeboxplus.options[this.form.addbbcode_codeboxplus.selectedIndex].className.substring(9) + ']', '[/code]');this.form.addbbcode_codeboxplus.selectedIndex = 0;" title="{L_CODEBOX_PLUS_SELECT}">
 		<option value="0" selected="selected" style="display: none">{L_CODEBOX_PLUS_SELECT}</option>
+		<option value="autohotkey" class="code_etx_ahk" title="AutoHotkey">AHK (AutoHotkey)</option>
 		<option value="text" class="code_etx_txt" title="Plain Text">TXT (Text)</option>
 		<option value="robots" class="code_etx_txt" title="Robots.txt">TXT (Robots.txt)</option>
 		<option value="asm" class="code_etx_asm" title="Assembly">ASM (Assembly)</option>
@@ -66,7 +67,6 @@
 		<option value="arm" class="code_etx_txt" title="ARM Assembler">ARM Assembler</option>
 		<option value="asymptote" class="code_etx_txt" title="Asymptote">Asymptote</option>
 		<option value="autoconf" class="code_etx_txt" title="AutoConf">AutoConf</option>
-		<option value="autohotkey" class="code_etx_ahk" title="AutoHotKey">AutoHotKey</option>
 		<option value="avisynth" class="code_etx_txt" title="AviSynth">AviSynth</option>
 		<option value="awk" class="code_etx_txt" title="Awk">Awk</option>
 		<option value="bascomavr" class="code_etx_txt" title="Bascom AVR">Bascom AVR</option>

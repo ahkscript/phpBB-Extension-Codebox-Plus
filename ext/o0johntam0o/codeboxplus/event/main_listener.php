@@ -192,7 +192,7 @@ class main_listener implements EventSubscriberInterface
 	* Use: $this->codebox_parse_code(), $this->codebox_decode_code()
 	* Generate text for display
 	*/
-	public function codebox_template($code = '', $lang = 'text', $file = '', $id = 0, $part = 0)
+	public function codebox_template($code = '', $lang = '', $file = '', $id = 0, $part = 0)
 	{
 		if (strlen($code) == 0)
 		{
@@ -201,7 +201,7 @@ class main_listener implements EventSubscriberInterface
 		
 		if (strlen($lang) == 0) // [code] tag without language.
 		{
-			$lang = 'text';
+			$lang = 'autohotkey';
 		}
 		
 		$re = '<div class="codebox codebox_plus"><p>';
