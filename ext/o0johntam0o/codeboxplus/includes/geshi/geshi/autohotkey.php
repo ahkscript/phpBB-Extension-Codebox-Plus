@@ -4,19 +4,21 @@
  * --------
  * Author: Naveen Garg (naveen.garg@gmail.com)
  * Copyright: (c) 2009 Naveen Garg and GeSHi
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.8.11-modified
  * Date Started: 2009/06/11
  *
- * Autohotkey language file for GeSHi.
+ * AutoHotkey language file for GeSHi.
  *
  * CHANGES
  * -------
  * Release 1.0.8.5 (2009/06/11)
  * - First Release
- *
- * TODO
- * ----
- * Reference: http://www.autohotkey.com/docs/
+ * 2010/10/10 by Lexikos
+ * - Removed highlighting of fake/unrecognized built-in vars
+ * - Fixed highlighting of keywords followed by certain symbols (DISALLOWED_AFTER)
+ * 2015/05/16 by Lexikos
+ * - Fixed label regex to not eat the line ending
+ * - Updated keyword URLs
  *
  *************************************************************************************
  *
@@ -39,17 +41,17 @@
  ************************************************************************************/
 
 $language_data = array (
-    'LANG_NAME' => 'Autohotkey',
+    'LANG_NAME' => 'AutoHotkey',
     'COMMENT_SINGLE' => array(
         1 => ';'
         ),
     'COMMENT_MULTI' => array('/*' => '*/'),
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
     'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '',
+    'ESCAPE_CHAR' => '`',
     'KEYWORDS' => array(
         1 => array(
-            'while','if','and','or','else','return'
+            'while','if','and','or','else','return','false','in','is','or','true','not'
             ),
         2 => array(
             // built in variables
@@ -85,10 +87,13 @@ $language_data = array (
             'A_TitleMatchMode','A_TitleMatchModeSpeed','A_UserName','A_WDay',
             'A_WinDelay','A_WinDir','A_WorkingDir','A_YDay',
             'A_YEAR','A_YWeek','A_YYYY','Clipboard',
-            'ClipboardAll','ComSpec','ErrorLevel','ProgramFiles',
+            'ClipboardAll','ComSpec','ErrorLevel','ProgramFiles','A_Is64bitOS','A_IsUnicode',
+			'A_PtrSize','A_RegView','A_ScreenDPI','A_ScriptHwnd',
             ),
         3 => array(
-            'AutoTrim',
+            'AutoTrim','ComObjActive','ComObjArray','Catch','FileEncoding','FileOpen','SendLevel','SetRegView','Trim','Try','Until'
+			,'ComObjConnect','ComObjCreate','ComObjError','ComObjFlags','ComObjGet','ComObjQuery','Throw'
+			,'ComObjType','ComObjValue',
             'BlockInput','Break','Click',
             'ClipWait','Continue','Control',
             'ControlClick','ControlFocus','ControlGet',
@@ -161,7 +166,7 @@ $language_data = array (
             'WinWaitClose','WinWaitNotActive'
             ),
         4 => array(
-            'Abs','ACos','Asc','ASin',
+            'Abs','ACos','Asc','ASin','Func','GetKeyName','IsByRef','IsObject','StrSplit',
             'ATan','Ceil','Chr','Cos',
             'Exp','FileExist','Floor',
             'GetKeyState','IL_Add','IL_Create','IL_Destroy',
@@ -180,7 +185,7 @@ $language_data = array (
             ),
         5 => array(
             // #Directives
-            'AllowSameLineComments','ClipboardTimeout','CommentFlag',
+            'AllowSameLineComments','ClipboardTimeout','CommentFlag','If','IfTimeout','InputLevel','MenuMaskKey','Warn',
             'ErrorStdOut','EscapeChar','HotkeyInterval',
             'HotkeyModifierTimeout','Hotstring','IfWinActive',
             'IfWinExist','IfWinNotActive','IfWinNotExist',
@@ -253,14 +258,14 @@ $language_data = array (
             ),
         7 => array(
             // Gui commands
-            'Add',
+            'Add','New','GuiDropFiles',
             'Show', 'Submit', 'Cancel', 'Destroy',
             'Font', 'Color', 'Margin', 'Flash', 'Default',
             'GuiEscape','GuiClose','GuiSize','GuiContextMenu','GuiDropFilesTabStop',
             ),
         8 => array(
             // Gui Controls
-            'Button',
+            'Button','Custom','GroupBox','StatusBar','Tab','StatusBar',
             'Checkbox','Radio','DropDownList','DDL',
             'ComboBox','ListBox','ListView',
             'Text', 'Edit', 'UpDown', 'Picture',
@@ -288,42 +293,41 @@ $language_data = array (
         ),
     'STYLES' => array(
         'KEYWORDS' => array(
-            1 => 'color: #AAAAFF; font-weight: bold;',       // reserved #blue
-            2 => 'color: #88FF88;',                         // BIV yellow
-            3 => 'color: #FF00FF; font-style: italic;',       // commands purple
-            4 => 'color: #888844; font-weight: bold;',       // functions #0080FF
-            5 => 'color: #000000; font-style: italic;',    // directives #black
-            6 => 'color: #FF0000; font-style: italic;',      // hotkeys #red
-            7 => 'color: #000000; font-style: italic;',    // gui commands #black
-            8 => 'color: #000000; font-style: italic;'      // gui controls
+            1 => 'color: #480048; font-weight: bolder; font-style: italic;',       // reserved #blue
+            2 => 'color: #CF00CF; font-weight: bolder; font-style: italic;',                         // BIV yellow
+            3 => 'color: #004080; font-weight: bolder;',       // commands purple
+            4 => 'color: #0F707F; font-style: italic;',       // functions #0080FF
+            5 => 'color: #F04020; font-weight: bolder; font-style: italic; ',    // directives #black
+            6 => 'color: #FF00FF; font-weight: bolder;',      // hotkeys #red
+            7 => 'color: #004080; font-weight: bolder;',    // gui commands #black
+            8 => 'color: #004080; font-weight: bolder;'      // gui controls
             ),
         'COMMENTS' => array(
-            'MULTI' => 'font-style: italic; color: #669900;',
-            1 => 'font-style: italic; color: #009933;'
+            'MULTI' => 'font-style: italic; color: gray;',
+            1 => 'font-style: italic; color: #008000;'
             ),
         'ESCAPE_CHAR' => array(
-            0 => ''
+            0 => 'color: #FF8000; font-weight: bold; '
             ),
         'BRACKETS' => array(
-            0 => 'color: #00FF00; font-weight: bold;'
+            0 => 'color: brown; font-weight: bold;'
             ),
         'STRINGS' => array(
-            0 => 'font-weight: bold; color: #008080;'
+            0 => ' color: #404040;'
             ),
         'NUMBERS' => array(
-            0 => 'color: #0000dd;'
+            0 => 'color: #2F4F7F;'
             ),
         'METHODS' => array(
-            1 => 'color: #0000FF; font-style: italic; font-weight: italic;'
+            1 => 'color: #0000FF; font-style: italic; '
             ),
         'SYMBOLS' => array(
-            0 => 'color: #000000; font-weight: italic;'
+            0 => 'color: #7F200F; font-weight: bold;'
             ),
         'REGEXPS' => array(
             0 => 'font-weight: italic; color: #A00A0;',
             1 => 'color: #CC0000; font-style: italic;',
-            2 => 'color: #DD0000; font-style: italic;',
-            3 => 'color: #88FF88;'
+            2 => 'color: #DD0000; font-style: italic;'
             ),
         'SCRIPT' => array(
             )
@@ -338,19 +342,19 @@ $language_data = array (
         //hotstrings
         1 => '::[\w\d]+::',
         //labels
-        2 => '\w[\w\d]+:\s',
-        //Built-in Variables
-        3 => '\bA_\w+\b(?![^<]*>)'
+		2 => '\w+:(?=\s)'
+		// Lexikos: More complicated regex seems unnecessary:
+        //2 => '(?m:^)[ \t]*\K[^ \t\r\n,:]+:(?=[ \t]*(?m:$))' // Lexikos: Without \K, the first '<' of the span somehow gets eaten (seems to be a bug).
         ),
     'URLS' => array(
         1 => '',
-        2 => 'http://www.autohotkey.com/docs/Variables.htm#{FNAME}',
-        3 => 'http://www.autohotkey.com/docs/commands/{FNAME}.htm',
-        4 => 'http://www.autohotkey.com/docs/Functions.htm#BuiltIn',
-        5 => 'http://www.autohotkey.com/docs/commands/_{FNAME}.htm',
+        2 => 'http://ahkscript.org/docs/Variables.htm#{FNAME}',
+        3 => 'http://ahkscript.org/docs/commands/{FNAME}.htm',
+        4 => 'http://ahkscript.org/docs/Functions.htm#BuiltIn',
+        5 => 'http://ahkscript.org/docs/commands/_{FNAME}.htm',
         6 => '',
-        7 => 'http://www.autohotkey.com/docs/commands/Gui.htm#{FNAME}',
-        8 => 'http://www.autohotkey.com/docs/commands/GuiControls.htm#{FNAME}'
+        7 => 'http://ahkscript.org/docs/commands/Gui.htm#{FNAME}',
+        8 => 'http://ahkscript.org/docs/commands/GuiControls.htm#{FNAME}'
         ),
     'STRICT_MODE_APPLIES' => GESHI_MAYBE,
     'SCRIPT_DELIMITERS' => array(
@@ -365,8 +369,9 @@ $language_data = array (
         'KEYWORDS' => array(
             5 => array(
                 'DISALLOWED_BEFORE' => '(?<!\w)\#'
-                )
-            )
+                ),
+			'DISALLOWED_AFTER' => '(?![a-zA-Z0-9_#@$])'
+            ),
         )
 );
 
