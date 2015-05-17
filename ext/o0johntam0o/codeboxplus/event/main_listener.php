@@ -204,11 +204,6 @@ class main_listener implements EventSubscriberInterface
 			$lang = 'text';
 		}
 		
-		if (strlen($file) == 0)
-		{
-			$file = $this->user->lang['CODEBOX_PLUS_DEFAULT_FILENAME'] . 'txt';
-		}
-		
 		$re = '<div class="codebox_plus_wrap"><div class="codebox_plus_header">';
 		$re .= '<strong>' . $this->user->lang['CODEBOX_PLUS_CODE'] . ': </strong>';
 		$re .= '<a href="#" onclick="codebox_plus_select(this, 1); return false;">[' . $this->user->lang['SELECT_ALL_CODE'] . ']</a>';
@@ -217,7 +212,7 @@ class main_listener implements EventSubscriberInterface
 		if ($this->download_enabled && $lang != 'NULL' && $id != 0)
 		{
 			$re .= '&nbsp;<a href="' . $this->helper->route('o0johntam0o_codeboxplus_download_controller', array('id' => $id, 'part' => $part)) . '" onclick="window.open(this.href); return false;">';
-			$re .= '[' . $this->user->lang['CODEBOX_PLUS_DOWNLOAD'] . ']</a> ' . '('. $file . ')';
+			$re .= '[' . $this->user->lang['CODEBOX_PLUS_DOWNLOAD'] . ']</a> ' . ($file == '' ? '' : '('. $file . ')');
 		}
 		
 		$re .= '</div>';
