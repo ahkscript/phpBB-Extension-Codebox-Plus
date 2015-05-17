@@ -257,13 +257,10 @@ class main_listener implements EventSubscriberInterface
 			}
 			
 			$geshi = new \GeSHi($code, $lang);
-			$geshi->set_header_type(GESHI_HEADER_DIV);
-			$geshi->enable_line_numbers(GESHI_NORMAL_LINE_NUMBERS);
-			$geshi->enable_keyword_links(false);
-			$geshi->set_line_style('margin-left:20px;', false);
-			$geshi->set_code_style('border-bottom: dotted 1px #cccccc;', false);
-			$geshi->set_line_ending("\n");
-			$code = str_replace("\n", "", $geshi->parse_code());
+			$geshi->set_header_type(GESHI_HEADER_PRE);
+			$geshi->set_link_target("_blank"); // Open keyword links in new windows.
+			$geshi->set_overall_style(""); // Remove default font-family: let stylesheet define it.
+			$code = $geshi->parse_code();
 		}
 		
 		return $code;
