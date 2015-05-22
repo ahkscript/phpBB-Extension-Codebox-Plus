@@ -348,11 +348,11 @@ $language_data = array (
         ),
     'URLS' => array(
         1 => '',
-        2 => 'http://ahkscript.org/docs/Variables.htm#{FNAME}',
-        3 => 'http://ahkscript.org/docs/commands/{FNAME}.htm',
-        4 => 'http://ahkscript.org/docs/Functions.htm#BuiltIn',
-        5 => 'http://ahkscript.org/docs/commands/_{FNAME}.htm',
-        6 => '',
+        2 => 'http://ahkscript.org/docs/{FNAME}',
+        3 => 'http://ahkscript.org/docs/{FNAME}',
+        4 => 'http://ahkscript.org/docs/{FNAME}',
+        5 => 'http://ahkscript.org/docs/%23{FNAME}',
+        6 => 'http://ahkscript.org/docs/KeyList.htm',
         7 => 'http://ahkscript.org/docs/commands/Gui.htm#{FNAME}',
         8 => 'http://ahkscript.org/docs/commands/GuiControls.htm#{FNAME}'
         ),
