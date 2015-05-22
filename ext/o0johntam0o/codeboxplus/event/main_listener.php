@@ -223,7 +223,7 @@ class main_listener implements EventSubscriberInterface
 			$re .= '[' . $this->user->lang['CODEBOX_PLUS_DOWNLOAD'] . ']</a> ' . ($file == '' ? '' : '('. $file . ')');
 		}
 		
-		$re .= '<span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/">GeSHi</a> &copy; <a href="https://www.phpbb.com/customise/db/extension/codeboxplus/">Codebox Plus</a></span>';
+		$re .= '<span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/">GeSHi</a> &copy; <a href="https://github.com/ahkscript/phpBB-Extension-Codebox-Plus">Codebox Plus</a></span>';
 		$re .= '</p><code' . $codebox_class . '>';
 		
 		if ($lang != 'NULL')
