@@ -267,6 +267,7 @@ class main_listener implements EventSubscriberInterface
 			$geshi->set_header_type(GESHI_HEADER_PRE);
 			$geshi->set_link_target("_blank"); // Open keyword links in new windows.
 			$geshi->set_overall_style(""); // Remove default font-family: let stylesheet define it.
+			$geshi->enable_classes();
 			$code = $geshi->parse_code();
 		}
 		

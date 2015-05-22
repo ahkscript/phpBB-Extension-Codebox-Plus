@@ -1,0 +1,19 @@
+.codebox code { color: #ccc; }
+.kw1 { color: #E899E8; font-style: italic; } /* reserved */
+.kw2 { color: #E899E8; font-style: italic; } /* built-in vars */
+.kw3 { color: #829EFF; } /* commands */
+.kw4 { color: #2BCEE6; font-style: italic; } /* functions */
+.kw5 { color: #F26046; font-style: italic;  } /* directives */
+.kw6 { color: #EE786F; } /* hotkeys */
+.kw7 { color: #59ACFF; } /* gui commands */
+.kw8 { color: #59ACFF; } /* gui controls */
+.coMULTI { color: #25EB25; font-style: italic; } /* multi-line comments */
+.co1 { color: #7DDF8C; font-style: italic; } /* single-line comments */
+.es0 { color: #FF8000; } /* escape chars */
+.br0 { color: #87BDCD; } /* brackets */
+.st0, .st_h { color: #BABBDA; } /* strings */
+.nu0 { color: #11C4FF; } /* numbers */
+.sy0 { color: #87BDCD; } /* symbols */
+.re0 { color: #EDE4C4; } /* %variables% */
+.re1 { color: #CC0000; font-style: italic; } /* hotstrings */
+.re2 { color: #EC2828; font-style: italic; } /* labels */

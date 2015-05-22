@@ -1,0 +1,18 @@
+.kw1 { color: #480048; font-style: italic; } /* reserved */
+.kw2 { color: #CF00CF; font-style: italic; } /* built-in vars */
+.kw3 { color: #00509F; } /* commands */
+.kw4 { color: #0F707F; font-style: italic; } /* functions */
+.kw5 { color: #F04020; font-style: italic;  } /* directives */
+.kw6 { color: #A92014; } /* hotkeys */
+.kw7 { color: #004080; } /* gui commands */
+.kw8 { color: #004080; } /* gui controls */
+.coMULTI { font-style: italic; color: #008000; } /* multi-line comments */
+.co1 { font-style: italic; color: #008000; } /* single-line comments */
+.es0 { color: #FF8000; font-weight: bold;  } /* escape chars */
+.br0 { color: brown; font-weight: bold; } /* brackets */
+.st0, .st_h { color: #808080; } /* strings */
+.nu0 { color: #2F4F7F; } /* numbers */
+.sy0 { color: #7F200F; font-weight: bold; } /* symbols */
+.re0 { color: #821747; } /* %variables% */
+.re1 { color: #CC0000; font-style: italic; } /* hotstrings */
+.re2 { color: #DD0000; font-style: italic; } /* labels */
