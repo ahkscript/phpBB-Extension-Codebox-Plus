@@ -3884,13 +3884,12 @@ class GeSHi {
                 $attrs = array();
 
                 // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104396#p104396
-                if !($this->header_type == GESHI_HEADER_PRE || $this->header_type == GESHI_HEADER_PRE_VALID) {
                     // Make lines have at least one space in them if they're empty
                     // BenBE: Checking emptiness using trim instead of relying on blanks
                     if ('' == trim($code[$i])) {
-                        $code[$i] = '&nbsp;';
+                        //$code[$i] = '&nbsp;';
+                        $code[$i] = '&#32;';
                     }
-                }
 
                 // If this is a "special line"...
                 if ($this->line_numbers == GESHI_FANCY_LINE_NUMBERS &&
