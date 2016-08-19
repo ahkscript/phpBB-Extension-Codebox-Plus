@@ -3883,10 +3883,13 @@ class GeSHi {
                 //Reset the attributes for a new line ...
                 $attrs = array();
 
-                // Make lines have at least one space in them if they're empty
-                // BenBE: Checking emptiness using trim instead of relying on blanks
-                if ('' == trim($code[$i])) {
-                    $code[$i] = '&nbsp;';
+                // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104396#p104396
+                if !($this->header_type == GESHI_HEADER_PRE || $this->header_type == GESHI_HEADER_PRE_VALID) {
+                    // Make lines have at least one space in them if they're empty
+                    // BenBE: Checking emptiness using trim instead of relying on blanks
+                    if ('' == trim($code[$i])) {
+                        $code[$i] = '&nbsp;';
+                    }
                 }
 
                 // If this is a "special line"...
