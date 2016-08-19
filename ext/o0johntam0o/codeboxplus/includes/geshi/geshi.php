@@ -3883,12 +3883,11 @@ class GeSHi {
                 //Reset the attributes for a new line ...
                 $attrs = array();
 
-                // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104396#p104396
                     // Make lines have at least one space in them if they're empty
                     // BenBE: Checking emptiness using trim instead of relying on blanks
                     if ('' == trim($code[$i])) {
                         //$code[$i] = '&nbsp;';
-                        $code[$i] = '&#32;';
+                        $code[$i] = '&#32;'; // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104509#p104509
                     }
 
                 // If this is a "special line"...
@@ -4028,7 +4027,8 @@ class GeSHi {
                 // Make lines have at least one space in them if they're empty
                 // BenBE: Checking emptiness using trim instead of relying on blanks
                 if ('' == trim($code[$i])) {
-                    $code[$i] = '&nbsp;';
+                    //$code[$i] = '&nbsp;';
+                    $code[$i] = '&#32;'; // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104509#p104509
                 }
                 // fancy lines
                 if ($this->line_numbers == GESHI_FANCY_LINE_NUMBERS &&
