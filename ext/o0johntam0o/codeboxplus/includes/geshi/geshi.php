@@ -3887,7 +3887,10 @@ class GeSHi {
                     // BenBE: Checking emptiness using trim instead of relying on blanks
                     if ('' == trim($code[$i])) {
                         //$code[$i] = '&nbsp;';
-                        $code[$i] = '&#32;'; // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104509#p104509
+                        // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104509#p104509
+                        if (!($this->header_type == GESHI_HEADER_PRE || $this->header_type == GESHI_HEADER_PRE_VALID)) {
+                            $code[$i] = '&#32;';
+                        }
                     }
 
                 // If this is a "special line"...
@@ -4028,7 +4031,10 @@ class GeSHi {
                 // BenBE: Checking emptiness using trim instead of relying on blanks
                 if ('' == trim($code[$i])) {
                     //$code[$i] = '&nbsp;';
-                    $code[$i] = '&#32;'; // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104509#p104509
+                    // joedf: see https://autohotkey.com/boards/viewtopic.php?p=104509#p104509
+                    if (!($this->header_type == GESHI_HEADER_PRE || $this->header_type == GESHI_HEADER_PRE_VALID)) {
+                        $code[$i] = '&#32;';
+                    }
                 }
                 // fancy lines
                 if ($this->line_numbers == GESHI_FANCY_LINE_NUMBERS &&
